@@ -8,7 +8,7 @@ const config = {
       'react-dom',
     ],
     homepage: [
-      './src/components/homepage/index.js',
+      './src/components/index.js',
     ],
   },
   output: {
