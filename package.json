@@ -4,7 +4,7 @@
   "description": "static website using react",
   "main": "index.js",
   "scripts": {
-    "build:js": "webpack --config webpack.config.js",
+    "start": "./node_modules/.bin/babel src -d dist && node ./tools/build.js",
     "test": "mocha",
     "lint": "eslint src/components"
   },
@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.6.1",
+    "babel-cli": "^6.18.0",
     "babel-core": "^6.21.0",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.10",
