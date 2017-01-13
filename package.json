@@ -6,7 +6,8 @@
   "scripts": {
     "start": "./node_modules/.bin/babel src -d dist && node ./tools/build.js",
     "test": "mocha",
-    "lint": "eslint src/components"
+    "lint": "eslint src/components",
+    "build": "webpack --config webpack.prod.config.js"
   },
   "keywords": [
     "react",
@@ -42,6 +43,7 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.14.0",
     "webpack-dev-middleware": "^1.9.0",
-    "webpack-hot-middleware": "^2.15.0"
+    "webpack-hot-middleware": "^2.15.0",
+    "webpack-node-externals": "^1.5.4"
   }
 }

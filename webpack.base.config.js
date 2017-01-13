@@ -1,23 +1,12 @@
 /* eslint-disable global-require, import/no-extraneous-dependencies */
 const path = require('path')
-const webpack = require('webpack')
 
 const config = {
-  entry: {
-    vendor: [
-      'react',
-      'react-dom',
-    ],
-    homepage: [
-      './src/components/index.js',
-    ],
-  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist/',
     filename: '[name]-bundle.js',
   },
-  devtool: '#cheap-module-eval-source-map',
   resolve: {
     root: path.resolve(__dirname),
     extensions: ['', '.js', '.jsx', '.css'],
@@ -44,13 +33,6 @@ const config = {
       ],
     }],
   },
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: 'vendor-bundle.js',
-      minChunks: Infinity,
-    }),
-  ],
   postcss() {
     return [
       require('autoprefixer')({ browsers: [

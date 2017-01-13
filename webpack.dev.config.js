@@ -4,6 +4,16 @@ const R = require('ramda')
 const baseConfig = require('./webpack.base.config')
 
 const config = R.merge(baseConfig, {
+  entry: {
+    vendor: [
+      'react',
+      'react-dom',
+    ],
+    homepage: [
+      './src/components/hot.js',
+    ],
+  },
+  devtool: '#cheap-module-eval-source-map',
   devServer: {
     publicPath: baseConfig.output.publicPath,
     historyApiFallback: true,
@@ -14,14 +24,19 @@ const config = R.merge(baseConfig, {
     },
     host: '0.0.0.0',
   },
-  plugins: R.concat([
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'vendor-bundle.js',
+      minChunks: Infinity,
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('development'),
       },
     }),
     new webpack.HotModuleReplacementPlugin(),
-  ], baseConfig.plugins),
+  ],
 })
 
 module.exports = config
