@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build:js": "webpack --config webpack.config.js",
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "eslint src/components"
   },
   "keywords": [
     "react",
