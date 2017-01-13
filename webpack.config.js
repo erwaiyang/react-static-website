@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 const path = require('path')
 const webpack = require('webpack')
 
@@ -40,7 +41,7 @@ const config = {
       loaders: [
         'url?limit=1000',
         'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}',
-      ]
+      ],
     }],
   },
   plugins: [
@@ -51,7 +52,7 @@ const config = {
     }),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('development'),
+        NODE_ENV: JSON.stringify('development'),
       },
     }),
     new webpack.HotModuleReplacementPlugin(),
@@ -63,7 +64,7 @@ const config = {
         'Android >= 4',
         'iOS >= 7',
         'Safari >= 7.1',
-      ]}),
+      ] }),
     ]
   },
 }
