@@ -1,4 +1,4 @@
-/* eslint-disable global-require */
+/* eslint-disable global-require, import/no-extraneous-dependencies */
 const path = require('path')
 const webpack = require('webpack')
 
@@ -50,12 +50,6 @@ const config = {
       filename: 'vendor-bundle.js',
       minChunks: Infinity,
     }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('development'),
-      },
-    }),
-    new webpack.HotModuleReplacementPlugin(),
   ],
   postcss() {
     return [
