@@ -10,6 +10,8 @@ const config = R.merge(baseConfig, {
       'react-dom',
     ],
     homepage: [
+      'react-hot-loader/patch',
+      'webpack-hot-middleware/client',
       './src/components/hot.js',
     ],
   },
