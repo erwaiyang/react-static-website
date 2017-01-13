@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies, no-console, consistent-return */
 const path = require('path')
 const webpack = require('webpack')
 const express = require('express')
@@ -5,7 +6,7 @@ const devMiddleware = require('webpack-dev-middleware')
 const hotMiddleware = require('webpack-hot-middleware')
 const config = require('./webpack.config')
 
-var app = express()
+const app = express()
 const compiler = webpack(config)
 
 app.use(devMiddleware(compiler, {
@@ -17,17 +18,17 @@ app.use(devMiddleware(compiler, {
     chunks: false,
   },
   host: '0.0.0.0',
-}));
+}))
 
-app.use(hotMiddleware(compiler));
+app.use(hotMiddleware(compiler))
 
-app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'))
+})
 
-app.listen(4000, function (err) {
+app.listen(4000, (err) => {
   if (err) {
-    return console.error(err);
+    return console.error(err)
   }
 
   console.log('Hot server listening at http://localhost:4000/')

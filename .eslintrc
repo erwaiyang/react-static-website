@@ -1,0 +1,21 @@
+---
+parser: babel-eslint
+
+extends: airbnb
+
+plugins:
+  - react
+
+settings:
+  import/resolver:
+    webpack:
+      config: "webpack.dev.config.js"
+
+env:
+  browser: true
+  node: true
+
+rules:
+  jsx-a11y/anchor-has-content: 0
+  semi: [2, "never"]
+  react/jsx-filename-extension: [1, { "extensions": [".js", ".jsx"] }]
