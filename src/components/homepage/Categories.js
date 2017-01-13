@@ -6,7 +6,7 @@ function Categories({ categories }) {
     <div id="categories-container">
       <ul>
         {
-          categories.map((category) =>
+          categories.map(category =>
             <li key={category.id}><CategoryItem {...category} /></li>)
         }
       </ul>
@@ -15,7 +15,7 @@ function Categories({ categories }) {
 }
 
 Categories.propTypes = {
-  categories: PropTypes.array.isRequired,
+  categories: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export default Categories

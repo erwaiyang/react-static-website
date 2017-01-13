@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react'
 function CategoryItem({ name, icon }) {
   return (
     <div className="category-item">
-      <img src={icon} />
+      <img alt={name} src={icon} />
       <h3>{name}</h3>
     </div>
   )
