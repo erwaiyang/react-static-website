@@ -7,7 +7,7 @@ function Categories({ categories }) {
       <ul>
         {
           categories.map((category) =>
-            <li index={category.id}><CategoryItem {...category}></li>)
+            <li index={category.id}><CategoryItem {...category} /></li>)
         }
       </ul>
     </div>

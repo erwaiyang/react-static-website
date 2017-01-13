@@ -5,7 +5,7 @@ import categoriesData from './../../data/categories'
 function Homepage() {
   return (
     <div id="homepage">
-      <Categories categories={categoriesData}>
+      <Categories categories={categoriesData} />
     </div>
   )
 }

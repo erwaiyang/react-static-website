@@ -1,4 +1,4 @@
-export default const categories = [
+export default [
   {
     id: 1,
     name: '關於我們',
