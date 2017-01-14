@@ -1,6 +1,9 @@
 const Handlebars = require('handlebars')
+const childProcess = require('child_process')
+const path = require('path')
 const fs = require('fs')
-const body = require('../dist/components/static.js').default
+
+const body = childProcess.execSync(`node ${path.resolve(__dirname, '../dist/homepage-bundle')}`)
 
 fs.readFile('./src/templates/index.hbs', 'utf8', (err, words) => {
   if (err) throw err

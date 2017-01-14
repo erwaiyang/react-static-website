@@ -4,3 +4,5 @@ import Homepage from './homepage'
 
 const html = ReactDOMServer.renderToStaticMarkup(<Homepage />)
 export default html
+
+process.stdout.write(html)
