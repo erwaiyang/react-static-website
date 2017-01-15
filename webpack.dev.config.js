@@ -4,6 +4,12 @@ const R = require('ramda')
 const baseConfig = require('./webpack.base.config')
 
 const config = R.merge(baseConfig, {
+  module: {
+    loaders: R.append({
+      test: /\.css$/,
+      loader: 'style-loader!css-loader!postcss-loader',
+    }, baseConfig.module.loaders),
+  },
   entry: {
     vendor: [
       'react',

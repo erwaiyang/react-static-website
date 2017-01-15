@@ -19,13 +19,6 @@ const config = {
       loader: 'babel-loader',
       exclude: path.resolve(__dirname, 'node_modules/'),
     }, {
-      test: /\.css$/,
-      loaders: [
-        'style',
-        'css',
-        'postcss',
-      ],
-    }, {
       test: /.*\.(gif|png|jpe?g|svg)$/i,
       loaders: [
         'url?limit=1000',
