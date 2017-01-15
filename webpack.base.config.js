@@ -35,12 +35,8 @@ const config = {
   },
   postcss() {
     return [
-      require('autoprefixer')({ browsers: [
-        'Android 2.3',
-        'Android >= 4',
-        'iOS >= 7',
-        'Safari >= 7.1',
-      ] }),
+      require('postcss-import')(),
+      require('postcss-cssnext'),
     ]
   },
 }
