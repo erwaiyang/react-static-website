@@ -8,7 +8,8 @@
     "test": "mocha",
     "lint": "eslint src/components",
     "webpack": "webpack --config webpack.prod.config.js",
-    "build": "npm run webpack && node tools/build"
+    "clean": "rimraf dist",
+    "build": "npm run clean && npm run webpack && node tools/build"
   },
   "keywords": [
     "react",
@@ -44,6 +45,7 @@
     "postcss-import": "^9.1.0",
     "postcss-loader": "^1.2.2",
     "react-hot-loader": "3.0.0-beta.6",
+    "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.14.0",
