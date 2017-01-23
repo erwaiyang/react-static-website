@@ -5,10 +5,13 @@ const baseConfig = require('./webpack.base.config')
 
 const config = R.merge(baseConfig, {
   module: {
-    loaders: R.append({
+    loaders: R.concat([{
       test: /\.css$/,
       loader: 'style-loader!css-loader!postcss-loader',
-    }, baseConfig.module.loaders),
+    }, {
+      test: /.*\.(mp4|avi)$/i,
+      loader: 'file-loader?name=[name]_[hash].[ext]',
+    }], baseConfig.module.loaders),
   },
   entry: {
     vendor: [
